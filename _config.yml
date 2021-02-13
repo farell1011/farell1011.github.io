@@ -1,0 +1,46 @@
+# visit https://github.com/mojombo/jekyll/wiki/Configuration for more settings
+
+paginate: 5 # pagination based on number of posts
+paginate_path: "page:num"
+exclude: ["README.md"] # files to exclude
+highlighter: rouge
+markdown: kramdown
+#disqus: dbyll
+#google_analytics: dbyll
+title: "{farell}"
+
+defaults:
+  -
+    scope:
+      path: "" # empty string for all files
+    values:
+      title: "{hello world}"
+
+description: catatan unix
+author:
+  name: farell
+  email: farell1011@protonmail.com
+  github: farell1011
+#  twitter: dbtek
+#  pinterest: asd123
+#  linkedin: asd123
+  bio: "
+• ▌ ▄ ·. ▄▄▄▄▄• ▌ ▄ ·. 
+·██ ▐███▪•██  ·██ ▐███▪
+▐█ ▌▐▌▐█· ▐█.▪▐█ ▌▐▌▐█·
+██ ██▌▐█▌ ▐█▌·██ ██▌▐█▌
+▀▀  █▪▀▀▀ ▀▀▀ ▀▀  █▪▀▀▀
+"
+  email_md5: 6083431e4071d4746e661baddfc52b1d
+
+rss_path: feed.xml
+categories_path: categories.html
+tags_path: tags.html
+
+# set it as url of an image
+# sidebar_background_image: https://www.dropbox.com/s/g9h23zrycedxtk5/sky.png?raw=1
+
+BASE_PATH:
+
+plugins:
+  - jekyll-paginate
