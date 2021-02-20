@@ -7,6 +7,7 @@ fullview: true
 ---
 Install toolsnya
 {% highlight bash %}
+sudo pacman -S efibootmgr
 yay -S sbsigntools efitools secure-boot-git
 {% endhighlight %}
 
