@@ -5,38 +5,38 @@ categories: [setup]
 tags: [archlinux, secureboot, setup]
 fullview: true
 ---
-###Install toolsnya
+Install toolsnya
 {% highlight bash %}
 yay -S sbsigntools efitools secure-boot-git
 {% endhighlight %}
 
-###Creating keys
+Creating keys
 {% highlight bash %}
 sudo secure-boot gen-keys
 {% endhighlight %}
 
-###Signing EFI binaries
+Signing EFI binaries
 {% highlight bash %}
 sudo secure-boot update
 {% endhighlight %}
 (kalo partion /boot penuh; uninstall systemdboot; sudo bootctl remove; lalu ulangi lagi; sudo secure-boot update) 
 
-###install boot entries untuk secure boot
+install boot entries untuk secure boot
 {% highlight bash %}
 sudo secure-boot install
 {% endhighlight %}
 
-###copy key ke boot partisi
+copy key ke boot partisi
 {% highlight bash %}
 sudo cp /etc/secure-boot/{PK.auth,db.esl,KEK.esl} /boot
 {% endhighlight %}
 
-###copy cmdline ke /etc/kernel/cmdline
+copy cmdline ke /etc/kernel/cmdline
 {% highlight bash %}
 sudo cat /proc/cmdline > /etc/kernel/cmdline
 {% endhighlight %}
 
-###tambahakan entrie key tool
+tambahakan entrie key tool
 (kalo systemdboot diuninstall; install lg; sudo bootctl install)
 {% highlight bash %}
 sudo cp /usr/share/efitools/efi/KeyTool.efi /boot
@@ -51,7 +51,7 @@ title  KeyTool
 efi    /KeyTool.efi
 {% endhighlight %}
 
-###reboot ke firmware setup
+reboot ke firmware setup
 {% highlight bash %}
 sudo systemctl reboot --firmware-setup
 {% endhighlight %}
@@ -63,7 +63,7 @@ Boot => rubah boot order ke Linux (systemd)
 Exit => save & exit
 {% endhighlight %}
 
-###Enrolling keys in firmware; boot ke key tool tambahkan key
+Enrolling keys in firmware; boot ke key tool tambahkan key
 {% highlight bash %}
 Edit Keys
 DB add key => db.esl
@@ -74,7 +74,7 @@ exit
 reboot ke firmware setup
 {% endhighlight %}
 
-###Enable Secure boot
+Enable Secure boot
 {% highlight bash %}
 Security => enable secure boot
 Boot => rubah boot order ke SecureBoot linux
@@ -82,13 +82,13 @@ Exit => OS Optimized Defaults (win8 / pure uefi) jika ada (jangan Other OS)
 Exit => save & exit
 {% endhighlight %}
 
-###cek secure boot
+cek secure boot
 {% highlight bash %}
 bootctl status
 Secure Boot: enabled
 {% endhighlight %}
 
-###remove systemd bootloader, PK.auth & *.esl file dipartisi boot)
+remove systemd bootloader, PK.auth & *.esl file dipartisi boot)
 {% highlight bash %}
 sudo bootctl remove
 cd /boot
