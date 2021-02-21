@@ -59,7 +59,7 @@ sudo systemctl reboot --firmware-setup
 
 {% highlight bash %}
 Security => Restore Factory Keys (Enter)
-Security =>Reset to Setup Mode (Enter)
+Security => Reset to Setup Mode (Enter)
 Boot => rubah boot order ke Linux (systemd)
 Exit => save & exit
 {% endhighlight %}
